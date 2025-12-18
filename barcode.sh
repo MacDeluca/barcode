@@ -38,16 +38,16 @@ BCSC_BARCODE=${BCSC_SERIAL}
 echo "Generating barcodes..."
 
 echo "Driver's License Barcode Data: $DRIVERS_LICENSE_BARCODE"
-zint --barcode=pdf-417 --output=barcodes/license_barcode_pdf417.png --data="$DRIVERS_LICENSE_BARCODE"
+zint --barcode=pdf-417 --output=barcodes/license_barcode_pdf417.png --height=30 --data="$DRIVERS_LICENSE_BARCODE"
 
 echo "Driver's License Combo Barcode Data: $DRIVERS_LICENSE_COMBO_BARCODE"
-zint --barcode=pdf-417 --output=barcodes/license_combo_barcode_pdf417.png --data="$DRIVERS_LICENSE_COMBO_BARCODE"
+zint --barcode=pdf-417 --output=barcodes/license_combo_barcode_pdf417.png --height=30 --data="$DRIVERS_LICENSE_COMBO_BARCODE"
 
 echo "BCSC Barcode Data IOS: $BCSC_BARCODE"
-zint --barcode=code-39 --output=barcodes/bcsc_barcode_code39.png --reverse --data="$BCSC_BARCODE"
+zint --barcode=code-39 --output=barcodes/bcsc_barcode_ios_code39.png --reverse --height=15 --data="$BCSC_BARCODE"
 
 echo "BCSC Barcode Data Android: $BCSC_BARCODE"
-zint --barcode=code-39 --output=barcodes/bcsc_barcode_code39.png --data="$BCSC_BARCODE"
+zint --barcode=code-39 --output=barcodes/bcsc_barcode_android_code39.png --height=15 --data="$BCSC_BARCODE"
 
 # const BC_COMBO_CARD_DL_BARCODE_NO_BCSC_A =
 #   "%BCVICTORIA^SPECIMEN,$TEST CARD^910 GOVERNMENT ST$VICTORIA BC  V8W 3Y8^?;6360282222222=240919700906=?_%0AV8W3Y8                     M185 95BRNBLU9123456789                E$''C(R2S6L?"
